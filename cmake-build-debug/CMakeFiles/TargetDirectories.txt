@@ -1,0 +1,3 @@
+/home/zach/Nextcloud/Coding/CS 236/Quicksort/cmake-build-debug/CMakeFiles/Quicksort.dir
+/home/zach/Nextcloud/Coding/CS 236/Quicksort/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/zach/Nextcloud/Coding/CS 236/Quicksort/cmake-build-debug/CMakeFiles/rebuild_cache.dir

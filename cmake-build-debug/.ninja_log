@@ -1,0 +1,5 @@
+# ninja log v5
+525	602	1652737095946301856	Quicksort	1013ce8fcce69ed8
+1	525	1652737095870300877	CMakeFiles/Quicksort.dir/implementation.cpp.o	82ad3b7b8a745d7b
+1	491	1652737095834300414	CMakeFiles/Quicksort.dir/main.cpp.o	5f06382849e4cd20
+812	1323	6742878767259132	Quicksort.exe	df9665aee9a5bba1

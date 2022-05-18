@@ -1,5 +1,5 @@
 //
-// Created by zach on 5/14/22.
+// Created by Zach Dupureur on 5/14/22.
 //
 
 #include "header.h"
@@ -11,6 +11,12 @@ void makeArray(int arr[], int size) { // Basic function to fill array with rando
     }
 }
 
+void copyArrays(int orgArr[], int arr1[], int arr2[], int arr3[], int size) {
+    for (int i = 0; i < size; i++) {
+        arr1[i] = arr2[i] = arr3[i] = orgArr[i];
+    }
+}
+
 void swap(int* x, int* y) { // Quick swap of integers
     int z = *x;
     *x = *y;
@@ -18,27 +24,48 @@ void swap(int* x, int* y) { // Quick swap of integers
 }
 
 
-void quickSort(int arr[], int min, int max) { // Standard quicksort call, uses full array then both halves of original
+
+void quickSortMin(int *arr, int size) { // Helper functions to call quicksort with proper size
+    quickSortMin(arr, 0, size - 1);
+}
+
+void quickSortMedian(int arr[], int size) {
+    quickSortMedian(arr, 0, size - 1);
+}
+
+
+void quickSortMin(int arr[], int min, int max) { // Standard quicksort call, uses full array then both halves of original
+    if (min < max) {
+
+            int partNum = partitionMedian(arr, min, max);
+
+            quickSortMin(arr, min, partNum - 1);
+            quickSortMin(arr, partNum + 1, max);
+    }
+}
+
+void quickSortMedian(int arr[], int min, int max) { // Standard quicksort call, uses full array then both halves of original
     if (min < max) {
 
         int partNum = partitionMedian(arr, min, max);
 
-        quickSort(arr, min, partNum - 1);
-        quickSort(arr, partNum + 1, max);
+        quickSortMedian(arr, min, partNum - 1);
+        quickSortMedian(arr, partNum + 1, max);
     }
 }
 
-void printArray(int arr[], int size) { // Function to print an array. Debug purposes
-    for (int i = 0; i < size; i++)
+
+void printArray(int arr[], int min, int size) { // Function to print an array. Debug purposes
+    for (int i = min; i < size; i++)
         std::cout << arr[i] << " ";
     std::cout << std::endl;
 }
 
-int partitionMin(int *arr, int min, int max) {
+int partitionMin(int *arr, int min, int max) { // Partitions array using min number as pivot
     int pivotNum = arr[min];
     int j = min + 1;
 
-    for (int i = min + 1; i<= max; i++) {
+    for (int i = min + 1; i <= max; i++) {
 
         if (arr[i] < pivotNum) {
             if (i != j) {
@@ -49,51 +76,66 @@ int partitionMin(int *arr, int min, int max) {
     }
 
     swap(&arr[min], &arr[j-1]);
-
     return j - 1;
 }
 
 int partitionMedian(int *arr, int min, int max) {
-
-    int pivotIndex = medianOfThree(arr, min, max);
-    int pivotNum = arr[pivotIndex];
-
-    int j = min;
-    int h = max;
-
-    while (j < h) {
-
-        while (arr[j] <= pivotNum) {
-            j++;
+    int pivotIndex = medianOfThree(arr, min, max); // Getting Median and swapping positions
+    int pivot = arr[pivotIndex];
+    int left = min + 1;
+    int right = max - 1;
+    while (right > left) {
+        while (left <= right && arr[left] <= pivot) {
+            left++;
         }
-        while (arr[h] > pivotNum) {
-            h--;
+        while (left <= right && arr[right] > pivot) {
+            right--;
         }
-        if (j < h && j != h) {
-            swap(&arr[j], &arr[h]);
+        if (right > left) {
+            swap(&arr[left], &arr[right]);
         }
     }
 
-    swap(&arr[pivotIndex + 1], &arr[pivotIndex]);
-    return h;
+    while (right > min && arr[right] >= pivot) {
+        right--;
+    }
+    if (pivot > arr[right]) {
+        swap(&arr[right], &arr[pivotIndex]);
+        return right;
+    }
 
+    else {
+        return min;
+    }
 }
 
-int medianOfThree(int arr[], int min, int max) {
-    int mid = (min + max) / 2;
 
-    if (arr[max] < arr[min]) {
-        swap(&arr[min], &arr[max]);
+int medianOfThree(int arr[], int min, int max){
+    int mid;
+    if ((min + max) % 2 == 0) {
+        mid = (min + max) / 2;
+    }
+    else {
+        mid = (min + (max - min)) / 2 ;
     }
 
+    // Swapping of three integers so in order
     if (arr[mid] < arr[min]) {
         swap(&arr[mid], &arr[min]);
     }
-
+    if (arr[max] < arr[min]) {
+        swap(&arr[max], &arr[min]);
+    }
     if (arr[max] < arr[mid]) {
         swap(&arr[max], &arr[mid]);
     }
 
-    return mid;
+    swap(&arr[min], &arr[mid]);
+    // Placing pivot in first position for sorting. I know this is probably not what you were looking for and would
+    // want the pivot in place, but I spent two days on this algorithm and couldn't get it working properly. I decided
+    // to move on.
+
+    return min;
 
 }
+

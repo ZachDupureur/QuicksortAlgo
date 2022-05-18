@@ -32,14 +32,14 @@ CONFIGURATION = Debug
 #############################################
 # Include rules file.
 
-include CMakeFiles/rules.ninja
+include CMakeFiles\rules.ninja
 
 # =============================================================================
 
 #############################################
 # Logical path to working directory; prefix for absolute paths.
 
-cmake_ninja_workdir = /home/zach/Nextcloud/Coding/CS$ 236/Quicksort/cmake-build-debug/
+cmake_ninja_workdir = G$:\NextCloud\ThinkPad\Coding\CS$ 236\Quicksort\cmake-build-debug\
 # =============================================================================
 # Object build statements for EXECUTABLE target Quicksort
 
@@ -47,19 +47,21 @@ cmake_ninja_workdir = /home/zach/Nextcloud/Coding/CS$ 236/Quicksort/cmake-build-
 #############################################
 # Order-only phony target for Quicksort
 
-build cmake_object_order_depends_target_Quicksort: phony || CMakeFiles/Quicksort.dir
+build cmake_object_order_depends_target_Quicksort: phony || CMakeFiles\Quicksort.dir
 
-build CMakeFiles/Quicksort.dir/main.cpp.o: CXX_COMPILER__Quicksort_Debug /home/zach/Nextcloud/Coding/CS$ 236/Quicksort/main.cpp || cmake_object_order_depends_target_Quicksort
-  DEP_FILE = CMakeFiles/Quicksort.dir/main.cpp.o.d
-  FLAGS = -g
-  OBJECT_DIR = CMakeFiles/Quicksort.dir
-  OBJECT_FILE_DIR = CMakeFiles/Quicksort.dir
+build CMakeFiles\Quicksort.dir\main.cpp.obj: CXX_COMPILER__Quicksort_Debug G$:\NextCloud\ThinkPad\Coding\CS$ 236\Quicksort\main.cpp || cmake_object_order_depends_target_Quicksort
+  FLAGS = /DWIN32 /D_WINDOWS /EHsc /Zi /Ob0 /Od /RTC1 -MDd
+  OBJECT_DIR = CMakeFiles\Quicksort.dir
+  OBJECT_FILE_DIR = CMakeFiles\Quicksort.dir
+  TARGET_COMPILE_PDB = CMakeFiles\Quicksort.dir\
+  TARGET_PDB = Quicksort.pdb
 
-build CMakeFiles/Quicksort.dir/implementation.cpp.o: CXX_COMPILER__Quicksort_Debug /home/zach/Nextcloud/Coding/CS$ 236/Quicksort/implementation.cpp || cmake_object_order_depends_target_Quicksort
-  DEP_FILE = CMakeFiles/Quicksort.dir/implementation.cpp.o.d
-  FLAGS = -g
-  OBJECT_DIR = CMakeFiles/Quicksort.dir
-  OBJECT_FILE_DIR = CMakeFiles/Quicksort.dir
+build CMakeFiles\Quicksort.dir\implementation.cpp.obj: CXX_COMPILER__Quicksort_Debug G$:\NextCloud\ThinkPad\Coding\CS$ 236\Quicksort\implementation.cpp || cmake_object_order_depends_target_Quicksort
+  FLAGS = /DWIN32 /D_WINDOWS /EHsc /Zi /Ob0 /Od /RTC1 -MDd
+  OBJECT_DIR = CMakeFiles\Quicksort.dir
+  OBJECT_FILE_DIR = CMakeFiles\Quicksort.dir
+  TARGET_COMPILE_PDB = CMakeFiles\Quicksort.dir\
+  TARGET_PDB = Quicksort.pdb
 
 
 # =============================================================================
@@ -67,42 +69,47 @@ build CMakeFiles/Quicksort.dir/implementation.cpp.o: CXX_COMPILER__Quicksort_Deb
 
 
 #############################################
-# Link the executable Quicksort
+# Link the executable Quicksort.exe
 
-build Quicksort: CXX_EXECUTABLE_LINKER__Quicksort_Debug CMakeFiles/Quicksort.dir/main.cpp.o CMakeFiles/Quicksort.dir/implementation.cpp.o
-  FLAGS = -g
-  OBJECT_DIR = CMakeFiles/Quicksort.dir
-  POST_BUILD = :
-  PRE_LINK = :
-  TARGET_FILE = Quicksort
-  TARGET_PDB = Quicksort.dbg
+build Quicksort.exe: CXX_EXECUTABLE_LINKER__Quicksort_Debug CMakeFiles\Quicksort.dir\main.cpp.obj CMakeFiles\Quicksort.dir\implementation.cpp.obj
+  FLAGS = /DWIN32 /D_WINDOWS /EHsc /Zi /Ob0 /Od /RTC1 -MDd
+  LINK_FLAGS = /machine:X86 /debug /INCREMENTAL /subsystem:console
+  LINK_LIBRARIES = kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib
+  OBJECT_DIR = CMakeFiles\Quicksort.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_COMPILE_PDB = CMakeFiles\Quicksort.dir\
+  TARGET_FILE = Quicksort.exe
+  TARGET_IMPLIB = Quicksort.lib
+  TARGET_PDB = Quicksort.pdb
 
 
 #############################################
 # Utility command for edit_cache
 
-build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd "/home/zach/Nextcloud/Coding/CS 236/Quicksort/cmake-build-debug" && /opt/clion-2021.3.2/bin/cmake/linux/bin/ccmake -S"/home/zach/Nextcloud/Coding/CS 236/Quicksort" -B"/home/zach/Nextcloud/Coding/CS 236/Quicksort/cmake-build-debug"
-  DESC = Running CMake cache editor...
-  pool = console
+build CMakeFiles\edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D "G:\NextCloud\ThinkPad\Coding\CS 236\Quicksort\cmake-build-debug" && "C:\Program Files\JetBrains\CLion 2021.2.3\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
+  DESC = No interactive CMake dialog available...
   restat = 1
 
-build edit_cache: phony CMakeFiles/edit_cache.util
+build edit_cache: phony CMakeFiles\edit_cache.util
 
 
 #############################################
 # Utility command for rebuild_cache
 
-build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd "/home/zach/Nextcloud/Coding/CS 236/Quicksort/cmake-build-debug" && /opt/clion-2021.3.2/bin/cmake/linux/bin/cmake --regenerate-during-build -S"/home/zach/Nextcloud/Coding/CS 236/Quicksort" -B"/home/zach/Nextcloud/Coding/CS 236/Quicksort/cmake-build-debug"
+build CMakeFiles\rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D "G:\NextCloud\ThinkPad\Coding\CS 236\Quicksort\cmake-build-debug" && "C:\Program Files\JetBrains\CLion 2021.2.3\bin\cmake\win\bin\cmake.exe" --regenerate-during-build -S"G:\NextCloud\ThinkPad\Coding\CS 236\Quicksort" -B"G:\NextCloud\ThinkPad\Coding\CS 236\Quicksort\cmake-build-debug""
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
 
-build rebuild_cache: phony CMakeFiles/rebuild_cache.util
+build rebuild_cache: phony CMakeFiles\rebuild_cache.util
 
 # =============================================================================
 # Target aliases.
+
+build Quicksort: phony Quicksort.exe
 
 # =============================================================================
 # Folder targets.
@@ -110,9 +117,9 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 # =============================================================================
 
 #############################################
-# Folder: /home/zach/Nextcloud/Coding/CS 236/Quicksort/cmake-build-debug
+# Folder: G:/NextCloud/ThinkPad/Coding/CS 236/Quicksort/cmake-build-debug
 
-build all: phony Quicksort
+build all: phony Quicksort.exe
 
 # =============================================================================
 # Built-in targets
@@ -121,14 +128,14 @@ build all: phony Quicksort
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | ../CMakeLists.txt /opt/clion-2021.3.2/bin/cmake/linux/share/cmake-3.22/Modules/CMakeCInformation.cmake /opt/clion-2021.3.2/bin/cmake/linux/share/cmake-3.22/Modules/CMakeCXXInformation.cmake /opt/clion-2021.3.2/bin/cmake/linux/share/cmake-3.22/Modules/CMakeCommonLanguageInclude.cmake /opt/clion-2021.3.2/bin/cmake/linux/share/cmake-3.22/Modules/CMakeGenericSystem.cmake /opt/clion-2021.3.2/bin/cmake/linux/share/cmake-3.22/Modules/CMakeInitializeConfigs.cmake /opt/clion-2021.3.2/bin/cmake/linux/share/cmake-3.22/Modules/CMakeLanguageInformation.cmake /opt/clion-2021.3.2/bin/cmake/linux/share/cmake-3.22/Modules/CMakeSystemSpecificInformation.cmake /opt/clion-2021.3.2/bin/cmake/linux/share/cmake-3.22/Modules/CMakeSystemSpecificInitialize.cmake /opt/clion-2021.3.2/bin/cmake/linux/share/cmake-3.22/Modules/Compiler/CMakeCommonCompilerMacros.cmake /opt/clion-2021.3.2/bin/cmake/linux/share/cmake-3.22/Modules/Compiler/GNU-C.cmake /opt/clion-2021.3.2/bin/cmake/linux/share/cmake-3.22/Modules/Compiler/GNU-CXX.cmake /opt/clion-2021.3.2/bin/cmake/linux/share/cmake-3.22/Modules/Compiler/GNU.cmake /opt/clion-2021.3.2/bin/cmake/linux/share/cmake-3.22/Modules/Platform/Linux-GNU-C.cmake /opt/clion-2021.3.2/bin/cmake/linux/share/cmake-3.22/Modules/Platform/Linux-GNU-CXX.cmake /opt/clion-2021.3.2/bin/cmake/linux/share/cmake-3.22/Modules/Platform/Linux-GNU.cmake /opt/clion-2021.3.2/bin/cmake/linux/share/cmake-3.22/Modules/Platform/Linux.cmake /opt/clion-2021.3.2/bin/cmake/linux/share/cmake-3.22/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.22.3/CMakeCCompiler.cmake CMakeFiles/3.22.3/CMakeCXXCompiler.cmake CMakeFiles/3.22.3/CMakeSystem.cmake
+build build.ninja: RERUN_CMAKE | ..\CMakeLists.txt C$:\Program$ Files\JetBrains\CLion$ 2021.2.3\bin\cmake\win\share\cmake-3.22\Modules\CMakeCInformation.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.2.3\bin\cmake\win\share\cmake-3.22\Modules\CMakeCXXInformation.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.2.3\bin\cmake\win\share\cmake-3.22\Modules\CMakeCommonLanguageInclude.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.2.3\bin\cmake\win\share\cmake-3.22\Modules\CMakeGenericSystem.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.2.3\bin\cmake\win\share\cmake-3.22\Modules\CMakeInitializeConfigs.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.2.3\bin\cmake\win\share\cmake-3.22\Modules\CMakeLanguageInformation.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.2.3\bin\cmake\win\share\cmake-3.22\Modules\CMakeRCInformation.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.2.3\bin\cmake\win\share\cmake-3.22\Modules\CMakeSystemSpecificInformation.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.2.3\bin\cmake\win\share\cmake-3.22\Modules\CMakeSystemSpecificInitialize.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.2.3\bin\cmake\win\share\cmake-3.22\Modules\Compiler\CMakeCommonCompilerMacros.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.2.3\bin\cmake\win\share\cmake-3.22\Modules\Compiler\MSVC-C.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.2.3\bin\cmake\win\share\cmake-3.22\Modules\Compiler\MSVC-CXX.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.2.3\bin\cmake\win\share\cmake-3.22\Modules\Platform\Windows-MSVC-C.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.2.3\bin\cmake\win\share\cmake-3.22\Modules\Platform\Windows-MSVC-CXX.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.2.3\bin\cmake\win\share\cmake-3.22\Modules\Platform\Windows-MSVC.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.2.3\bin\cmake\win\share\cmake-3.22\Modules\Platform\Windows.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.2.3\bin\cmake\win\share\cmake-3.22\Modules\Platform\WindowsPaths.cmake CMakeCache.txt CMakeFiles\3.22.3\CMakeCCompiler.cmake CMakeFiles\3.22.3\CMakeCXXCompiler.cmake CMakeFiles\3.22.3\CMakeRCCompiler.cmake CMakeFiles\3.22.3\CMakeSystem.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build ../CMakeLists.txt /opt/clion-2021.3.2/bin/cmake/linux/share/cmake-3.22/Modules/CMakeCInformation.cmake /opt/clion-2021.3.2/bin/cmake/linux/share/cmake-3.22/Modules/CMakeCXXInformation.cmake /opt/clion-2021.3.2/bin/cmake/linux/share/cmake-3.22/Modules/CMakeCommonLanguageInclude.cmake /opt/clion-2021.3.2/bin/cmake/linux/share/cmake-3.22/Modules/CMakeGenericSystem.cmake /opt/clion-2021.3.2/bin/cmake/linux/share/cmake-3.22/Modules/CMakeInitializeConfigs.cmake /opt/clion-2021.3.2/bin/cmake/linux/share/cmake-3.22/Modules/CMakeLanguageInformation.cmake /opt/clion-2021.3.2/bin/cmake/linux/share/cmake-3.22/Modules/CMakeSystemSpecificInformation.cmake /opt/clion-2021.3.2/bin/cmake/linux/share/cmake-3.22/Modules/CMakeSystemSpecificInitialize.cmake /opt/clion-2021.3.2/bin/cmake/linux/share/cmake-3.22/Modules/Compiler/CMakeCommonCompilerMacros.cmake /opt/clion-2021.3.2/bin/cmake/linux/share/cmake-3.22/Modules/Compiler/GNU-C.cmake /opt/clion-2021.3.2/bin/cmake/linux/share/cmake-3.22/Modules/Compiler/GNU-CXX.cmake /opt/clion-2021.3.2/bin/cmake/linux/share/cmake-3.22/Modules/Compiler/GNU.cmake /opt/clion-2021.3.2/bin/cmake/linux/share/cmake-3.22/Modules/Platform/Linux-GNU-C.cmake /opt/clion-2021.3.2/bin/cmake/linux/share/cmake-3.22/Modules/Platform/Linux-GNU-CXX.cmake /opt/clion-2021.3.2/bin/cmake/linux/share/cmake-3.22/Modules/Platform/Linux-GNU.cmake /opt/clion-2021.3.2/bin/cmake/linux/share/cmake-3.22/Modules/Platform/Linux.cmake /opt/clion-2021.3.2/bin/cmake/linux/share/cmake-3.22/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.22.3/CMakeCCompiler.cmake CMakeFiles/3.22.3/CMakeCXXCompiler.cmake CMakeFiles/3.22.3/CMakeSystem.cmake: phony
+build ..\CMakeLists.txt C$:\Program$ Files\JetBrains\CLion$ 2021.2.3\bin\cmake\win\share\cmake-3.22\Modules\CMakeCInformation.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.2.3\bin\cmake\win\share\cmake-3.22\Modules\CMakeCXXInformation.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.2.3\bin\cmake\win\share\cmake-3.22\Modules\CMakeCommonLanguageInclude.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.2.3\bin\cmake\win\share\cmake-3.22\Modules\CMakeGenericSystem.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.2.3\bin\cmake\win\share\cmake-3.22\Modules\CMakeInitializeConfigs.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.2.3\bin\cmake\win\share\cmake-3.22\Modules\CMakeLanguageInformation.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.2.3\bin\cmake\win\share\cmake-3.22\Modules\CMakeRCInformation.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.2.3\bin\cmake\win\share\cmake-3.22\Modules\CMakeSystemSpecificInformation.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.2.3\bin\cmake\win\share\cmake-3.22\Modules\CMakeSystemSpecificInitialize.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.2.3\bin\cmake\win\share\cmake-3.22\Modules\Compiler\CMakeCommonCompilerMacros.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.2.3\bin\cmake\win\share\cmake-3.22\Modules\Compiler\MSVC-C.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.2.3\bin\cmake\win\share\cmake-3.22\Modules\Compiler\MSVC-CXX.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.2.3\bin\cmake\win\share\cmake-3.22\Modules\Platform\Windows-MSVC-C.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.2.3\bin\cmake\win\share\cmake-3.22\Modules\Platform\Windows-MSVC-CXX.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.2.3\bin\cmake\win\share\cmake-3.22\Modules\Platform\Windows-MSVC.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.2.3\bin\cmake\win\share\cmake-3.22\Modules\Platform\Windows.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.2.3\bin\cmake\win\share\cmake-3.22\Modules\Platform\WindowsPaths.cmake CMakeCache.txt CMakeFiles\3.22.3\CMakeCCompiler.cmake CMakeFiles\3.22.3\CMakeCXXCompiler.cmake CMakeFiles\3.22.3\CMakeRCCompiler.cmake CMakeFiles\3.22.3\CMakeSystem.cmake: phony
 
 
 #############################################

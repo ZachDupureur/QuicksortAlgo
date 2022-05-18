@@ -8,6 +8,7 @@
 #include "iostream"
 #include "iomanip"
 #include "ctime"
+#include "limits"
 
 void swap(int* x, int* y);
 
@@ -19,6 +20,15 @@ void quickSortMedian(int arr[], int size);
 
 void quickSortMedian(int arr[], int min, int max);
 
+void quickSortMinIns(int arr[], int size);
+
+void quickSortMinIns(int arr[], int min, int max);
+
+void quickSortMedIns(int arr[], int size);
+
+void quickSortMedIns(int arr[], int min, int max);
+
+void insertionSort(int arr[],int start, int stop);
 
 void makeArray(int arr[], int size);
 
@@ -31,6 +41,12 @@ int partitionMin(int *arr, int min, int max);
 int partitionMedian(int *arr, int min, int max);
 
 int medianOfThree(int arr[], int min, int max);
+
+float calcTime(clock_t start, clock_t stop);
+
+void menu();
+
+void cinClear();
 
 #endif //QUICKSORT_HEADER_H
 
